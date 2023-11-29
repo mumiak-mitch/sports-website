@@ -1,0 +1,41 @@
+{% extends 'sportsapp/base.html' %}
+{% block title %} Register {% endblock %}
+{% block content %}
+<h2>Register</h2>
+
+<form action="{% url 'register' %}" method="post">
+    {% csrf_token %}
+
+    <div class="mb-3">
+        <label for="" class="form-label">Username</label>
+        <input type="text" class="form-control" id="username" aria-describedby="Username" name="username" required
+            placeholder="Enter your username">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">First Name</label>
+        <input type="text" class="form-control" id="fname" aria-describedby="First Name" name="fname" required
+            placeholder="Enter your first name">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Last Name</label>
+        <input type="text" class="form-control" id="lname" aria-describedby="Last Name" name="lname" required
+            placeholder="Enter your second name">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="email" aria-describedby="Email" name="email" required
+            placeholder="Enter your email">
+        <div id="" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Password</label>
+        <input type="password" class="form-control" id="pass1" name="pass1" required placeholder="Enter your password">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Confirm Password</label>
+        <input type="password" class="form-control" id="pass2" name="pass2" required
+            placeholder="Confirm your password">
+    </div>
+    <button type="submit" class="btn btn-primary">Register</button>
+</form>
+{% endblock %}
